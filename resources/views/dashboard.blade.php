@@ -14,56 +14,60 @@
 
 <div class="row">
     <div class="col-md-3 mb-4">
-        <div class="card">
+        <div class="card stat-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 class="text-muted mb-1">Total Buku</h6>
+                        <h6 class="mb-2">
+                            <i class="fas fa-book"></i> Total Buku
+                        </h6>
                         <h3 class="mb-0">{{ $totalBuku }}</h3>
                     </div>
-                    <i class="fas fa-book fa-3x text-primary opacity-50"></i>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="col-md-3 mb-4">
-        <div class="card">
+        <div class="card stat-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 class="text-muted mb-1">Peminjaman Aktif</h6>
+                        <h6 class="mb-2">
+                            <i class="fas fa-arrow-right-arrow-left"></i> Peminjaman Aktif
+                        </h6>
                         <h3 class="mb-0">{{ $peminjamanAktif }}</h3>
                     </div>
-                    <i class="fas fa-arrow-right-arrow-left fa-3x text-success opacity-50"></i>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="col-md-3 mb-4">
-        <div class="card">
+        <div class="card stat-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 class="text-muted mb-1">Total Peminjaman</h6>
+                        <h6 class="mb-2">
+                            <i class="fas fa-list"></i> Total Peminjaman
+                        </h6>
                         <h3 class="mb-0">{{ $totalPeminjaman }}</h3>
                     </div>
-                    <i class="fas fa-list fa-3x text-info opacity-50"></i>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="col-md-3 mb-4">
-        <div class="card">
+        <div class="card stat-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 class="text-muted mb-1">Tipe User</h6>
+                        <h6 class="mb-2">
+                            <i class="fas fa-user-circle"></i> Tipe User
+                        </h6>
                         <h3 class="mb-0">{{ ucfirst($userType) }}</h3>
                     </div>
-                    <i class="fas fa-user-circle fa-3x text-warning opacity-50"></i>
                 </div>
             </div>
         </div>

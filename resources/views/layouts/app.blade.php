@@ -8,37 +8,253 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bs-body-bg: #f8f9fa;
+            --bs-body-bg: #f6f7fc;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-color: #4facfe;
+            --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
+        
+        * {
+            transition: all 0.3s ease;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f6f7fc 0%, #e9ecef 100%);
+            min-height: 100vh;
         }
+        
+        /* Navbar Styling */
+        .navbar {
+            background: linear-gradient(180deg, #344aa5 0%, #7857ee 100%) !important;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            border: none !important;
+        }
+        
         .navbar-brand {
             font-weight: 700;
             letter-spacing: -0.5px;
+            color: white !important;
+            font-size: 1.3rem;
         }
-        .sidebar {
-            background: #fff;
-            border-right: 1px solid #dee2e6;
-            min-height: 100vh;
+        
+        .navbar-brand i {
+            margin-right: 0.5rem;
         }
+        
         .nav-link {
-            color: #6c757d;
-            border-left: 3px solid transparent;
+            color: rgba(255, 255, 255, 0.85) !important;
             transition: all 0.3s ease;
         }
-        .nav-link:hover, .nav-link.active {
-            color: #0d6efd;
+        
+        .nav-link:hover, .navbar-light .navbar-nav .show > .nav-link {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .dropdown-item:hover {
             background-color: #f8f9fa;
-            border-left-color: #0d6efd;
+            color: #667eea;
         }
+        
+        /* Sidebar Styling */
+        .sidebar {
+            background: linear-gradient(180deg, #2e3e81 0%, #334c8b 100%);
+            border-right: 1px solid #245d96;
+            min-height: 100vh;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-link {
+            color: #3d3d5c;
+            border-left: 4px solid transparent;
+            padding: 0.75rem 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+            position: relative;
+            font-size: 0.95rem;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+        }
+        
+        .nav-link i {
+            margin-right: 0.75rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .nav-link:hover {
+            color: #667eea;
+            background-color: rgba(102, 126, 234, 0.08);
+            border-left-color: #667eea;
+            transform: translateX(4px);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.05));
+            color: #667eea;
+            border-left-color: #667eea;
+            font-weight: 600;
+            box-shadow: inset -2px 0 0 #667eea;
+        }
+        
+        .sidebar h6 {
+            color: #2d2d3d;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .sidebar h6:first-child {
+            margin-top: 0;
+        }
+        
+        /* Card Styling */
         .card {
-            border: none;
-            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
         }
+        
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.12);
+            transform: translateY(-4px);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
         .card-header {
-            background-color: #fff;
-            border-bottom: 1px solid #dee2e6;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.05), rgba(79, 172, 254, 0.05));
+            border-bottom: 2px solid #e9ecef;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        /* Stat Cards */
+        .stat-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(79, 172, 254, 0.05) 100%);
+            border-left: 4px solid #667eea;
+        }
+        
+        .stat-card:nth-child(2) {
+            border-left-color: #4facfe;
+        }
+        
+        .stat-card:nth-child(3) {
+            border-left-color: #00f2fe;
+        }
+        
+        .stat-card:nth-child(4) {
+            border-left-color: #f093fb;
+        }
+        
+        .stat-card h6 {
+            color: #a0a0b8;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .stat-card h3 {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        
+        .stat-card i {
+            opacity: 0.3;
+            color: #667eea;
+        }
+        
+        .stat-card:nth-child(2) i {
+            color: #4facfe;
+        }
+        
+        .stat-card:nth-child(3) i {
+            color: #00f2fe;
+        }
+        
+        .stat-card:nth-child(4) i {
+            color: #f093fb;
+        }
+        
+        /* Button Styling */
+        .btn {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-primary {
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-outline-primary:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+        }
+        
+        /* Page Header */
+        h2 {
+            color: #2d2d3d;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 i {
+            color: #667eea;
+            margin-right: 0.5rem;
+        }
+        
+        .text-muted {
+            color: #a0a0b8 !important;
+        }
+        
+        /* Table Styling */
+        .table {
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .table thead th {
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.08), rgba(79, 172, 254, 0.08));
+            border-bottom: 2px solid #e9ecef;
+            color: #667eea;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            padding: 1rem;
+        }
+        
+        .table tbody tr:hover {
+            background-color: rgba(102, 126, 234, 0.05);
         }
     </style>
     @yield('styles')
